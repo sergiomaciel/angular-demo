@@ -1,0 +1,38 @@
+<form (submit)="addUser(inputUser)">
+    <input type="text" #inputUser>
+    <!-- <input #checkActivo
+        type="checkbox" 
+        [value]="1"
+        (change)="click_check($event)"
+    > -->
+    <button>Enviar user</button>
+</form>
+<button (click)="listUser()">Print console</button>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.nombre}}
+        <input
+            type="checkbox" 
+            [value]=user.id
+            [checked]=user.activo
+            (change)="click_check($event, user.id)"
+        >
+        <button (click)="deleteUser(user.id)"> 
+            X
+        </button>
+    </li>
+</ul>
+
+<hr>
+
+<!-- <div>
+    <form>
+        <input type="text" name="nombre" #inputNombre [(ngModel)]="nombre">
+        <input type="number" name="edad" #inputUser [(ngModel)]="edad">
+        <input type="checkbox" name="activo" #inputUser id="" [(ngModel)]="activo">
+        <button>+</button>
+    </form>
+    Nombre: {{nombre}} <br>
+    Edad: {{edad}} <br>
+    Activo: {{activo}} <br>
+</div> -->

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'primerapp';
+  titulo: string = 'Main Component';
+  users: string[] = ['juan', 'pedro', 'lucas']
+
+  diHola() {
+    alert('Clickeado');
+  }
 }
